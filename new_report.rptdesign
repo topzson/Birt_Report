@@ -6,67 +6,7 @@
     <property name="bidiLayoutOrientation">ltr</property>
     <property name="imageDPI">96</property>
     <data-sources>
-        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="7">
-            <list-property name="privateDriverProperties">
-                <ex-property>
-                    <name>metadataBidiFormatStr</name>
-                    <value>ILYNN</value>
-                </ex-property>
-                <ex-property>
-                    <name>disabledMetadataBidiFormatStr</name>
-                </ex-property>
-                <ex-property>
-                    <name>contentBidiFormatStr</name>
-                    <value>ILYNN</value>
-                </ex-property>
-                <ex-property>
-                    <name>disabledContentBidiFormatStr</name>
-                </ex-property>
-            </list-property>
-            <property name="odaDriverClass">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-            <property name="odaURL">jdbc:sqlserver://localhost;encrypt=true;integratedSecurity=true;</property>
-            <property name="odaUser">ALTPEABPTN0035\Rattatammanoon.P</property>
-        </oda-data-source>
-        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source1" id="9">
-            <list-property name="privateDriverProperties">
-                <ex-property>
-                    <name>metadataBidiFormatStr</name>
-                    <value>ILYNN</value>
-                </ex-property>
-                <ex-property>
-                    <name>disabledMetadataBidiFormatStr</name>
-                </ex-property>
-                <ex-property>
-                    <name>contentBidiFormatStr</name>
-                    <value>ILYNN</value>
-                </ex-property>
-                <ex-property>
-                    <name>disabledContentBidiFormatStr</name>
-                </ex-property>
-            </list-property>
-            <property name="odaDriverClass">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-            <property name="odaURL">jdbc:sqlserver://127.0.0.1:1433</property>
-            <property name="odaUser">sa</property>
-            <encrypted-property name="odaPassword" encryptionID="base64">YWRtaW4xMjM0</encrypted-property>
-        </oda-data-source>
-        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source2" id="11">
-            <text-property name="displayName"></text-property>
-            <list-property name="privateDriverProperties">
-                <ex-property>
-                    <name>contentBidiFormatStr</name>
-                    <value>ILYNN</value>
-                </ex-property>
-                <ex-property>
-                    <name>metadataBidiFormatStr</name>
-                    <value>ILYNN</value>
-                </ex-property>
-            </list-property>
-            <property name="odaDriverClass">org.eclipse.birt.report.data.oda.sampledb.Driver</property>
-            <property name="odaURL">jdbc:classicmodels:sampledb</property>
-            <property name="odaUser">ClassicModels</property>
-        </oda-data-source>
-        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source3" id="12">
-            <text-property name="displayName"></text-property>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="16">
             <list-property name="privateDriverProperties">
                 <ex-property>
                     <name>metadataBidiFormatStr</name>
@@ -84,11 +24,321 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
-            <property name="odaURL">jdbc:mysql://127.0.0.1:3306</property>
+            <property name="odaURL">jdbc:mysql://127.0.0.1:3306/learningdb</property>
             <property name="odaUser">root</property>
             <encrypted-property name="odaPassword" encryptionID="base64">YWRtaW4xMjM0</encrypted-property>
         </oda-data-source>
     </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Account avail balance" id="18">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">OPEN_BRANCH_ID</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Open Branch Id</text-property>
+                    <text-property name="heading">Open_Branch_Id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Branch Name</text-property>
+                    <text-property name="heading">Branch_Name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CUST_ID</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Cust Id</text-property>
+                    <text-property name="heading">Cust_Id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ADDRESS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Cust Address</text-property>
+                    <text-property name="heading">Cust_Address</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ACCOUNT_ID</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Account Id</text-property>
+                    <text-property name="heading">Account_Id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PRODUCT_CD</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Product CD</text-property>
+                    <text-property name="heading">Product_Cd</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">AVAIL_BALANCE</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Available Balance</text-property>
+                    <text-property name="heading">Avail_Balance</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">OPEN_BRANCH_ID</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CUST_ID</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ADDRESS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ACCOUNT_ID</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">PRODUCT_CD</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">AVAIL_BALANCE</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">OPEN_BRANCH_ID</property>
+                    <property name="nativeName">OPEN_BRANCH_ID</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NAME</property>
+                    <property name="nativeName">NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CUST_ID</property>
+                    <property name="nativeName">CUST_ID</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ADDRESS</property>
+                    <property name="nativeName">ADDRESS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ACCOUNT_ID</property>
+                    <property name="nativeName">ACCOUNT_ID</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">PRODUCT_CD</property>
+                    <property name="nativeName">PRODUCT_CD</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">AVAIL_BALANCE</property>
+                    <property name="nativeName">AVAIL_BALANCE</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">7</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[Select Acc.Open_Branch_Id
+     ,Bra.Name           Branch_Name
+     ,Acc.Cust_Id
+     ,Cus.Address        Cust_Address
+     ,Acc.Account_Id
+     ,Acc.Product_Cd
+     ,Acc.Avail_Balance
+From   Account  Acc
+     ,Customer Cus
+     ,Branch   Bra
+Where  Acc.Cust_Id = Cus.Cust_Id
+And    Acc.Open_Branch_Id = Bra.Branch_Id
+Order  By Acc.Open_Branch_Id]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>OPEN_BRANCH_ID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Open_Branch_Id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Open_Branch_Id</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>NAME</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Branch_Name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Branch_Name</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CUST_ID</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Cust_Id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Cust_Id</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ADDRESS</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>30</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Cust_Address</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Cust_Address</design:label>
+            <design:formattingHints>
+              <design:displaySize>30</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ACCOUNT_ID</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Account_Id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Account_Id</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>PRODUCT_CD</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Product_Cd</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Product_Cd</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>AVAIL_BALANCE</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>7</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>Avail_Balance</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>Avail_Balance</design:label>
+            <design:formattingHints>
+              <design:displaySize>12</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
     <styles>
         <style name="report" id="4">
             <property name="fontFamily">sans-serif</property>
@@ -125,6 +375,32 @@
     </styles>
     <page-setup>
         <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">landscape</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">medium</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">medium</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">medium</property>
+            <page-header>
+                <grid id="19">
+                    <column id="20"/>
+                    <column id="21"/>
+                    <column id="22"/>
+                    <row id="23">
+                        <cell id="24"/>
+                        <cell id="25"/>
+                        <cell id="26"/>
+                    </row>
+                    <row id="27">
+                        <cell id="28"/>
+                        <cell id="29"/>
+                        <cell id="30"/>
+                    </row>
+                </grid>
+            </page-header>
             <page-footer>
                 <text id="3">
                     <property name="contentType">html</property>
@@ -133,4 +409,1380 @@
             </page-footer>
         </simple-master-page>
     </page-setup>
+    <body>
+        <grid id="32">
+            <property name="height">3.1666666666666665in</property>
+            <property name="width">10.427083333333334in</property>
+            <column id="33">
+                <property name="width">1.8854166666666667in</property>
+            </column>
+            <column id="34">
+                <property name="width">5.072916666666667in</property>
+            </column>
+            <column id="35">
+                <property name="width">3.46875in</property>
+            </column>
+            <row id="36">
+                <property name="height">1.3020833333333333in</property>
+                <cell id="37">
+                    <image id="44">
+                        <property name="borderBottomStyle">none</property>
+                        <property name="borderLeftStyle">none</property>
+                        <property name="borderRightStyle">none</property>
+                        <property name="borderTopStyle">none</property>
+                        <property name="height">1.7291666666666667in</property>
+                        <property name="width">1.7291666666666667in</property>
+                        <property name="source">embed</property>
+                        <property name="imageName">1519902366351.jfif</property>
+                    </image>
+                </cell>
+                <cell id="38"/>
+                <cell id="39">
+                    <text id="45">
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<h3>
+Portalnet Co.ltd
+</h3>
+]]></text-property>
+                    </text>
+                    <text id="46">
+                        <property name="contentType">html</property>
+                        <text-property name="content"><![CDATA[<B>
+<I>
+For Interna; use only
+</I>
+</B>]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="40">
+                <cell id="41"/>
+                <cell id="42">
+                    <extended-item extensionName="Chart" id="47">
+                        <xml-property name="xmlRepresentation"><![CDATA[<model:ChartWithoutAxes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attribute="http://www.birt.eclipse.org/ChartModelAttribute" xmlns:layout="http://www.birt.eclipse.org/ChartModelLayout" xmlns:model="http://www.birt.eclipse.org/ChartModel" xmlns:type="http://www.birt.eclipse.org/ChartModelType">
+  <Version>2.6.1</Version>
+  <Type>Pie Chart</Type>
+  <SubType>Standard</SubType>
+  <Block>
+    <Children xsi:type="layout:TitleBlock">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>true</Visible>
+      <Label>
+        <Caption>
+          <Value>Sum available Balance per Branch</Value>
+          <Font>
+            <Size>16.0</Size>
+            <Bold>true</Bold>
+            <Alignment>
+              <horizontalAlignment>Center</horizontalAlignment>
+              <verticalAlignment>Center</verticalAlignment>
+            </Alignment>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>true</Visible>
+      </Label>
+    </Children>
+    <Children xsi:type="layout:Plot">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>true</Visible>
+      <HorizontalSpacing>5</HorizontalSpacing>
+      <VerticalSpacing>5</VerticalSpacing>
+      <ClientArea>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>0</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>0.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>0.0</Right>
+        </Insets>
+      </ClientArea>
+    </Children>
+    <Children xsi:type="layout:Legend">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>true</Visible>
+      <ClientArea>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>0</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>2.0</Top>
+          <Left>2.0</Left>
+          <Bottom>2.0</Bottom>
+          <Right>2.0</Right>
+        </Insets>
+      </ClientArea>
+      <Text>
+        <Value></Value>
+        <Font>
+          <Alignment/>
+        </Font>
+      </Text>
+      <Orientation>Vertical</Orientation>
+      <Direction>Top_Bottom</Direction>
+      <Separator>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>true</Visible>
+      </Separator>
+      <Position>Right</Position>
+      <ItemType>Categories</ItemType>
+      <Title>
+        <Caption>
+          <Value></Value>
+          <Font>
+            <Alignment/>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>false</Visible>
+      </Title>
+      <TitlePosition>Above</TitlePosition>
+    </Children>
+    <Bounds>
+      <Left>0.0</Left>
+      <Top>0.0</Top>
+      <Width>212.0</Width>
+      <Height>130.0</Height>
+    </Bounds>
+    <Insets>
+      <Top>3.0</Top>
+      <Left>3.0</Left>
+      <Bottom>3.0</Bottom>
+      <Right>3.0</Right>
+    </Insets>
+    <Row>-1</Row>
+    <Column>-1</Column>
+    <Rowspan>-1</Rowspan>
+    <Columnspan>-1</Columnspan>
+    <Outline>
+      <Style>Solid</Style>
+      <Thickness>1</Thickness>
+      <Color>
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>0</Green>
+        <Blue>0</Blue>
+      </Color>
+      <Visible>false</Visible>
+    </Outline>
+    <Visible>true</Visible>
+  </Block>
+  <Dimension>Two_Dimensional_With_Depth</Dimension>
+  <Units>Points</Units>
+  <SeriesThickness>10.0</SeriesThickness>
+  <GridColumnCount>0</GridColumnCount>
+  <ExtendedProperties>
+    <Name>enable.area.alt</Name>
+    <Value>false</Value>
+  </ExtendedProperties>
+  <SampleData>
+    <BaseSampleData>
+      <DataSetRepresentation>'A','B','C','D','E'</DataSetRepresentation>
+    </BaseSampleData>
+    <OrthogonalSampleData>
+      <DataSetRepresentation>6,4,12,8,10</DataSetRepresentation>
+      <SeriesDefinitionIndex>0</SeriesDefinitionIndex>
+    </OrthogonalSampleData>
+  </SampleData>
+  <Interactivity/>
+  <EmptyMessage>
+    <Caption>
+      <Value>This chart contains no data.</Value>
+      <Font>
+        <Alignment>
+          <horizontalAlignment>Center</horizontalAlignment>
+          <verticalAlignment>Center</verticalAlignment>
+        </Alignment>
+      </Font>
+    </Caption>
+    <Background xsi:type="attribute:ColorDefinition">
+      <Transparency>64</Transparency>
+      <Red>127</Red>
+      <Green>127</Green>
+      <Blue>127</Blue>
+    </Background>
+    <Outline>
+      <Color>
+        <Transparency>128</Transparency>
+        <Red>127</Red>
+        <Green>127</Green>
+        <Blue>127</Blue>
+      </Color>
+      <Visible>true</Visible>
+    </Outline>
+    <Insets>
+      <Top>10.0</Top>
+      <Left>10.0</Left>
+      <Bottom>10.0</Bottom>
+      <Right>10.0</Right>
+    </Insets>
+    <Visible>false</Visible>
+  </EmptyMessage>
+  <SeriesDefinitions>
+    <Query>
+      <Definition></Definition>
+    </Query>
+    <SeriesPalette>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>80</Red>
+        <Green>166</Green>
+        <Blue>218</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>242</Red>
+        <Green>88</Green>
+        <Blue>106</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>232</Red>
+        <Green>172</Green>
+        <Blue>57</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>128</Red>
+        <Green>255</Green>
+        <Blue>128</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>64</Red>
+        <Green>128</Green>
+        <Blue>128</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>128</Red>
+        <Green>128</Green>
+        <Blue>192</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>170</Red>
+        <Green>85</Green>
+        <Blue>85</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>128</Red>
+        <Green>128</Green>
+        <Blue>0</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>192</Red>
+        <Green>192</Green>
+        <Blue>192</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>255</Green>
+        <Blue>128</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>128</Red>
+        <Green>192</Green>
+        <Blue>128</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>7</Red>
+        <Green>146</Green>
+        <Blue>94</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>128</Green>
+        <Blue>255</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>128</Green>
+        <Blue>192</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>255</Green>
+        <Blue>255</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>128</Green>
+        <Blue>128</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>128</Green>
+        <Blue>192</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>128</Red>
+        <Green>128</Green>
+        <Blue>192</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>0</Green>
+        <Blue>255</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>128</Red>
+        <Green>64</Green>
+        <Blue>64</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>128</Green>
+        <Blue>64</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>80</Red>
+        <Green>240</Green>
+        <Blue>120</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>64</Green>
+        <Blue>128</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>128</Red>
+        <Green>0</Green>
+        <Blue>64</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>0</Green>
+        <Blue>128</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>128</Red>
+        <Green>128</Green>
+        <Blue>64</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>128</Red>
+        <Green>128</Green>
+        <Blue>128</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>128</Green>
+        <Blue>255</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>64</Green>
+        <Blue>0</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>0</Green>
+        <Blue>0</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>255</Green>
+        <Blue>255</Blue>
+      </Entries>
+      <Entries xsi:type="attribute:ColorDefinition">
+        <Transparency>255</Transparency>
+        <Red>255</Red>
+        <Green>128</Green>
+        <Blue>0</Blue>
+      </Entries>
+    </SeriesPalette>
+    <SeriesDefinitions>
+      <Query>
+        <Definition></Definition>
+      </Query>
+      <SeriesPalette>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>80</Red>
+          <Green>166</Green>
+          <Blue>218</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>242</Red>
+          <Green>88</Green>
+          <Blue>106</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>232</Red>
+          <Green>172</Green>
+          <Blue>57</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>255</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>64</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>170</Red>
+          <Green>85</Green>
+          <Blue>85</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>192</Red>
+          <Green>192</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>192</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>7</Red>
+          <Green>146</Green>
+          <Blue>94</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>128</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>0</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>64</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>80</Red>
+          <Green>240</Green>
+          <Blue>120</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>64</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>0</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>0</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>64</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>0</Blue>
+        </Entries>
+      </SeriesPalette>
+      <Series xsi:type="type:PieSeries">
+        <Visible>true</Visible>
+        <Label>
+          <Caption>
+            <Value></Value>
+            <Font>
+              <Alignment/>
+            </Font>
+          </Caption>
+          <Background xsi:type="attribute:ColorDefinition">
+            <Transparency>0</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Background>
+          <Outline>
+            <Style>Solid</Style>
+            <Thickness>1</Thickness>
+            <Color>
+              <Transparency>255</Transparency>
+              <Red>0</Red>
+              <Green>0</Green>
+              <Blue>0</Blue>
+            </Color>
+            <Visible>false</Visible>
+          </Outline>
+          <Insets>
+            <Top>0.0</Top>
+            <Left>2.0</Left>
+            <Bottom>0.0</Bottom>
+            <Right>3.0</Right>
+          </Insets>
+          <Visible>false</Visible>
+        </Label>
+        <DataDefinition>
+          <Definition>row[&quot;AVAIL_BALANCE&quot;]</Definition>
+          <Grouping>
+            <GroupType>Text</GroupType>
+            <AggregateExpression>Sum</AggregateExpression>
+          </Grouping>
+        </DataDefinition>
+        <SeriesIdentifier>Series 1</SeriesIdentifier>
+        <DataPoint>
+          <Components>
+            <Type>Orthogonal_Value</Type>
+          </Components>
+          <Separator>, </Separator>
+        </DataPoint>
+        <LabelPosition>Outside</LabelPosition>
+        <Stacked>false</Stacked>
+        <Triggers>
+          <Condition>onmouseover</Condition>
+          <Action>
+            <Type>Show_Tooltip</Type>
+            <Value xsi:type="attribute:TooltipValue">
+              <Text></Text>
+              <Delay>200</Delay>
+            </Value>
+          </Action>
+        </Triggers>
+        <Explosion>0</Explosion>
+        <Title>
+          <Caption>
+            <Value></Value>
+            <Font>
+              <Size>16.0</Size>
+              <Bold>true</Bold>
+              <Alignment/>
+            </Font>
+          </Caption>
+          <Background xsi:type="attribute:ColorDefinition">
+            <Transparency>0</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Background>
+          <Outline>
+            <Style>Solid</Style>
+            <Thickness>1</Thickness>
+            <Color>
+              <Transparency>255</Transparency>
+              <Red>0</Red>
+              <Green>0</Green>
+              <Blue>0</Blue>
+            </Color>
+          </Outline>
+          <Insets>
+            <Top>0.0</Top>
+            <Left>2.0</Left>
+            <Bottom>0.0</Bottom>
+            <Right>3.0</Right>
+          </Insets>
+          <Visible>true</Visible>
+        </Title>
+        <TitlePosition>Below</TitlePosition>
+        <LeaderLineAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Visible>true</Visible>
+        </LeaderLineAttributes>
+        <LeaderLineLength>10.0</LeaderLineLength>
+      </Series>
+      <Grouping>
+        <GroupType>Text</GroupType>
+        <AggregateExpression>Sum</AggregateExpression>
+      </Grouping>
+    </SeriesDefinitions>
+    <Series>
+      <Visible>true</Visible>
+      <Label>
+        <Caption>
+          <Value></Value>
+          <Font>
+            <Alignment/>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>false</Visible>
+      </Label>
+      <DataDefinition>
+        <Definition>row[&quot;OPEN_BRANCH_ID&quot;];row[&quot;NAME&quot;]</Definition>
+      </DataDefinition>
+      <SeriesIdentifier></SeriesIdentifier>
+      <DataPoint>
+        <Components>
+          <Type>Orthogonal_Value</Type>
+        </Components>
+        <Separator>, </Separator>
+      </DataPoint>
+      <LabelPosition>Outside</LabelPosition>
+      <Stacked>false</Stacked>
+    </Series>
+    <Grouping>
+      <Enabled>true</Enabled>
+      <GroupType>Text</GroupType>
+      <AggregateExpression>Sum</AggregateExpression>
+    </Grouping>
+  </SeriesDefinitions>
+</model:ChartWithoutAxes>
+]]></xml-property>
+                        <property name="outputFormat">SVG</property>
+                        <property name="inheritColumns">false</property>
+                        <property name="height">130pt</property>
+                        <property name="width">4.989583333333333in</property>
+                        <property name="dataSet">Account avail balance</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">OPEN_BRANCH_ID</property>
+                                <expression name="expression" type="javascript">dataSetRow["OPEN_BRANCH_ID"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">NAME</property>
+                                <expression name="expression" type="javascript">dataSetRow["NAME"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CUST_ID</property>
+                                <expression name="expression" type="javascript">dataSetRow["CUST_ID"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ADDRESS</property>
+                                <expression name="expression" type="javascript">dataSetRow["ADDRESS"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ACCOUNT_ID</property>
+                                <expression name="expression" type="javascript">dataSetRow["ACCOUNT_ID"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">PRODUCT_CD</property>
+                                <expression name="expression" type="javascript">dataSetRow["PRODUCT_CD"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">AVAIL_BALANCE</property>
+                                <expression name="expression" type="javascript">dataSetRow["AVAIL_BALANCE"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+                <cell id="43"/>
+            </row>
+        </grid>
+        <table id="48">
+            <property name="dataSet">Account avail balance</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">OPEN_BRANCH_ID</property>
+                    <text-property name="displayName">Open Branch Id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["OPEN_BRANCH_ID"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">NAME</property>
+                    <text-property name="displayName">Branch Name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CUST_ID</property>
+                    <text-property name="displayName">Cust Id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CUST_ID"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">ADDRESS</property>
+                    <text-property name="displayName">Cust Address</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ADDRESS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ACCOUNT_ID</property>
+                    <text-property name="displayName">Account Id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ACCOUNT_ID"]</expression>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="name">PRODUCT_CD</property>
+                    <text-property name="displayName">Product CD</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PRODUCT_CD"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">AVAIL_BALANCE</property>
+                    <text-property name="displayName">Available Balance</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["AVAIL_BALANCE"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <text-property name="displayName">Sum Avail Balance per Cust</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Cust Group</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["AVAIL_BALANCE"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_1</property>
+                    <text-property name="displayName">Sum all avail balance</text-property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Branch Group</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["AVAIL_BALANCE"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="73"/>
+            <column id="74"/>
+            <column id="75"/>
+            <column id="76"/>
+            <column id="77"/>
+            <column id="78"/>
+            <column id="79"/>
+            <header>
+                <row id="146">
+                    <property name="backgroundColor">orange</property>
+                    <property name="fontSize">14pt</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#FFFFFF</property>
+                    <cell id="147"/>
+                    <cell id="148"/>
+                    <cell id="149"/>
+                    <cell id="150"/>
+                    <cell id="151"/>
+                    <cell id="152">
+                        <property name="backgroundColor">lime</property>
+                        <label id="154">
+                            <text-property name="text">Grand Total</text-property>
+                        </label>
+                    </cell>
+                    <cell id="153">
+                        <data id="155">
+                            <property name="backgroundColor">lime</property>
+                            <property name="resultSetColumn">Aggregation_1</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="49">
+                    <property name="backgroundColor">orange</property>
+                    <property name="fontSize">14pt</property>
+                    <property name="fontWeight">bold</property>
+                    <property name="color">#FFFFFF</property>
+                    <cell id="50">
+                        <label id="98">
+                            <text-property name="text">Branch ID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="51">
+                        <label id="99">
+                            <text-property name="text">Branch Name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="52">
+                        <label id="119">
+                            <text-property name="text">Cust ID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="53">
+                        <label id="120">
+                            <text-property name="text">Cust Address</text-property>
+                        </label>
+                    </cell>
+                    <cell id="54">
+                        <label id="140">
+                            <text-property name="text">Account ID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="55">
+                        <label id="141">
+                            <text-property name="text">Product CD</text-property>
+                        </label>
+                    </cell>
+                    <cell id="56">
+                        <label id="143">
+                            <text-property name="text">Avail Balance</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="80">
+                <property name="groupName">Branch Group</property>
+                <expression name="keyExpr" type="javascript">row["OPEN_BRANCH_ID"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["OPEN_BRANCH_ID"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="81">
+                        <property name="backgroundColor">gray</property>
+                        <cell id="82">
+                            <data id="97">
+                                <property name="textAlign">center</property>
+                                <property name="resultSetColumn">OPEN_BRANCH_ID</property>
+                            </data>
+                        </cell>
+                        <cell id="83">
+                            <data id="100">
+                                <property name="resultSetColumn">NAME</property>
+                            </data>
+                        </cell>
+                        <cell id="84"/>
+                        <cell id="85"/>
+                        <cell id="86"/>
+                        <cell id="87"/>
+                        <cell id="88"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="89">
+                        <cell id="90"/>
+                        <cell id="91"/>
+                        <cell id="92"/>
+                        <cell id="93"/>
+                        <cell id="94"/>
+                        <cell id="95"/>
+                        <cell id="96"/>
+                    </row>
+                </footer>
+            </group>
+            <group id="101">
+                <property name="groupName">Cust Group</property>
+                <expression name="keyExpr" type="javascript">row["CUST_ID"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["CUST_ID"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="102">
+                        <cell id="103"/>
+                        <cell id="104"/>
+                        <cell id="105">
+                            <data id="118">
+                                <property name="backgroundColor">silver</property>
+                                <property name="textAlign">center</property>
+                                <property name="resultSetColumn">CUST_ID</property>
+                            </data>
+                        </cell>
+                        <cell id="106">
+                            <data id="121">
+                                <property name="backgroundColor">silver</property>
+                                <property name="resultSetColumn">ADDRESS</property>
+                            </data>
+                        </cell>
+                        <cell id="107">
+                            <property name="backgroundColor">silver</property>
+                        </cell>
+                        <cell id="108">
+                            <property name="backgroundColor">silver</property>
+                        </cell>
+                        <cell id="109">
+                            <property name="backgroundColor">silver</property>
+                        </cell>
+                    </row>
+                </header>
+                <footer>
+                    <row id="110">
+                        <cell id="111"/>
+                        <cell id="112"/>
+                        <cell id="113"/>
+                        <cell id="114"/>
+                        <cell id="115"/>
+                        <cell id="116"/>
+                        <cell id="117">
+                            <data id="145">
+                                <property name="backgroundColor">lime</property>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Aggregation</property>
+                            </data>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <group id="122">
+                <property name="groupName">Account Group</property>
+                <expression name="keyExpr" type="javascript">row["ACCOUNT_ID"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["ACCOUNT_ID"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="123">
+                        <cell id="124"/>
+                        <cell id="125"/>
+                        <cell id="126"/>
+                        <cell id="127"/>
+                        <cell id="128">
+                            <data id="139">
+                                <property name="textAlign">center</property>
+                                <property name="resultSetColumn">ACCOUNT_ID</property>
+                            </data>
+                        </cell>
+                        <cell id="129">
+                            <data id="142">
+                                <property name="resultSetColumn">PRODUCT_CD</property>
+                            </data>
+                        </cell>
+                        <cell id="130">
+                            <data id="144">
+                                <property name="textAlign">center</property>
+                                <property name="resultSetColumn">AVAIL_BALANCE</property>
+                            </data>
+                        </cell>
+                    </row>
+                </header>
+                <footer>
+                    <row id="131">
+                        <cell id="132"/>
+                        <cell id="133"/>
+                        <cell id="134"/>
+                        <cell id="135"/>
+                        <cell id="136"/>
+                        <cell id="137"/>
+                        <cell id="138"/>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="57">
+                    <cell id="58"/>
+                    <cell id="59"/>
+                    <cell id="60"/>
+                    <cell id="61"/>
+                    <cell id="62"/>
+                    <cell id="63"/>
+                    <cell id="64"/>
+                </row>
+            </detail>
+            <footer>
+                <row id="65">
+                    <cell id="66"/>
+                    <cell id="67"/>
+                    <cell id="68"/>
+                    <cell id="69"/>
+                    <cell id="70"/>
+                    <cell id="71"/>
+                    <cell id="72"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">1519902366351.jfif</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsN
+                DhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQU
+                FBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wgARCADIAMgDASIAAhEBAxEB/8QA
+                HAABAAMBAQEBAQAAAAAAAAAAAAYHCAUEAgED/8QAGQEBAAMBAQAAAAAAAAAAAAAAAAEDBAIF/9oADAMB
+                AAIQAxAAAAHVIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGcN
+                C439XzrFubM3j25Zb7rfqWqy4ac4/P65nvJhmmuZoKyIDb0dVldeUbxhHr9x7sLPfQtp5X9+7JZcgo6V
+                Hsk8G0nnuzb9+23ra+ikTw/WiFEab5mrP90Vory0255hWou36WHOU+n3ZzX5JuuT/wB4msK90tzSoODp
+                ngTGZr76n5zOfbLsnoxOTfXprwaaInYfAkfnbsyarjEztqDNoRCXs18Y4ViMmmtvRYKm2sfbYKEYjllf
+                FtfDjViO+a6WKourrvyZdVxOXL11UL+JuptgvlsRX3AJ+bMobMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/8QAJRAAAgIDAAICAQUBAAAAAAAABAUDBgECBwAUEhUT
+                EBEXJnAw/9oACAEBAAEFAv8Ae5OgOCHH8jNFhzCxhLlJfUGJEqrqRGk7x1gCvLbtZG+qLo007M2/PYiY
+                ulup9qfZWztg/wCklCNULHLZPvfGG9p8tl8NSuq68jsCu33o1G5uNpKroI92sxcWLO8ir03SHg/kfRH0
+                2leMJYJypvXGp7AVfYrs8hsze3/mE3qyOBIp6sDBFsQbvrzGn3CCsBLVp1wsNoI9Wu8pH+TO6PPo0kdf
+                /p3NTcSVila5Y3Px3Fs8udWczVB83zhze+rEfJon6FMoWAEbFhdYI/cqmjerWPLcR6ta5qnGaEhpF6/f
+                pqCbJSbp+Ql5xjG+uegC6Jk9cQRMaHT2ktZsnSCPwVflA/xWWk2S3WptS2gCKks/UT0l2Igah9FVnE0j
+                T7C5dJrXswUMf2LV0Mj89qi6WniiSO4H4fSJvZtAcPrCeFCQnQRCr0MUkukUWTh/hLVlE+4gI4Ec69c6
+                8hh0HiYqFGdiPrGoQ+AFy8YJKu83JFJi1VpBhJk9eHzqHXhJow1CTfZqFvGvXKRSZQkJxsKmukSh7ABD
+                kipJiP1bhEMJSh5yVv05GM/XHfHCmeKcZWdrHAqn38YhyY3MCk38aD53BnXsD4oUZHmFps4uywyfSMTf
+                JziCQkBmLNudiMr3IRy8rsDFS+Ro5/IQyo/+mdcbf7j/AP/EADERAAIBAwIDBQUJAAAAAAAAAAECAwAE
+                ERIhEzFBFBVRcaEFEGBh8CIjMkJSgbHR8f/aAAgBAwEBPwH4BupCrIoOM0Ll49e+R0pxPGnFL08+qRct
+                gYqMyyISW2FQF9HGd9qt5ZDL9vqM1aO0ilmPWkuWEp1fhzRnfTI2eu1Qfe8pDmlErSmPXyoDAxTW5mmV
+                vSnteMmkCuzSuNMj7ULbTKxbyxUdnMIWUcjyo2MrRLEBt1o2EgkDRj5dagsrtAAg28jUfs6QwlCuc/Ku
+                7puEYx50kF0rYkHpSWzwuzv+b3QzGBta86S9kjGlRXeMvgKb2jK2dhUV60WNuX95/morx4RhQK7xlO+B
+                9fWKe9d9sD/RiorlogAB4+tdsP6R08en712+QbKAKnnM5BI+A//EADARAAEDAgQEAgoDAAAAAAAAAAEC
+                AxEABAUSIUETMVHwFKEQFSIjMmBxkbHRYYHB/9oACAECAQE/AfkGyaSpK1lMxRs0O5NMp3FNqtnXOCG/
+                7pu2yNKhOYzToZZcSkIknbpVyG+J4dtvWrthpLMtjkYq+bQ0pKEjanLNCmBk+OJoW7edlEba1c+5OrQi
+                aWplDCXeGNaUZJIpF0li3Wnl/NN3nh3M6lULthslbSPao3mdlKUc5madv2FPpWdCOdDEWEvLeJ1jT90M
+                TbU2UukddtquMQsXFFSzr9RT2KtC4CwoCNpo4sxxg6TpEDUUu5s1plo+Ypy7buG0Ntn4fRcMJuUcNfKn
+                MPadOZZM8u/z9aGFM9TSMJZTGp771p/D0PTrz+3KPxT9g3cKlRMdKGFMDQE9x/on703h7bZmTt5GaetE
+                vEknnHlrXgEzOc79N9TtXqxpWqyT3+hFW9sm2BCT8h//xABCEAACAQMBBAUIBgYLAAAAAAABAgMABBES
+                EyExUQUiMkGhFCNCUmGBkcEQM2JxseEGFTRjcPEgJDBDRFNykqLR8P/aAAgBAQAGPwL+PctnZW9vL51k
+                jGk5IHvrY9KWCLjtKoKtik6QkkzBIAY8cXzyoiztYok7gQXagnSNuhj73iGCvuqfpG3KSAIGjJ4HPD8a
+                lazsbecR9rSp3f8AKksukrZYWZtGtMjS3tBqcR2KbFXOktC3D41pjtreRuSxsfnUsd7bLBCkerIjZd+R
+                z99TwWKQPBGdOpwTk9/fVpdtgNKmW08M99fq2GODY+U7HJU5xnHP6JbO2SBkRV3upJzjPOo7pNzcJE9V
+                qaztUhZVRSdopJyffVi0SxG4m7Qcbtw3/jSyw9GLLG3B0t3IPjVxeXFiI7sTLHHFsWGR3nFDa2kMeeGu
+                Jh861R2UTrzWFj86t7i7QRzyDLKBjG+pZTwRC1RXd7Js40DHVgneR+dQeQozhU2YOne5zyqw6NlP7JbK
+                Cv2jvNQLGg2zqGkk72NWVyqhZ5NStj0huq3jY9u42Y+7JPyq4R7aSaSV85U4HCjerAY4Xm1vJ6K+/nXS
+                Mn7lgPfuq8n9SIL8T+VSOpxcS+bi+/nVx0rIOsZlCf6eB8T4UVY/s8jL7uPzqCVvXeY/A/RcwocNLc7I
+                Hwp7e6BSFm2c6cvtU6g6lkuljz7Nwqyh9SIt8T+VW9mnRmtYlxq1nf4VbzOmzaRA5XlkV0fB6qM/x/lX
+                Ryc49f8Au3/P6OkX/dFfjuq9a6gSdI1UAOM7z/KtdtZwwv6yIM0vScSF4iumXHo476jgurQzyRrpEivj
+                I9tIEi9iRr2Y19proboyM5EepieZ5+JqG0mX65WcN6pycH8KNrcHRG7bGZe4HuNSr/myInjn5Vez+vKE
+                +A/Oo7O2OY0bYx8vtN/7lVxq6XM1rDHq8nwcYG/nX6QR5/w+0XxHzFSXV2HK7IougZ35FRwRrca3OBlB
+                j8ahlPrPKfga/WluvnYxiYDvXn7qsuSEv8BVwO6NVTw/OkQJc4UY7A/7rym2DiPUV84MUYxv2cap8/nU
+                MI4RoF+A+hoZ41mibijjINM0UUVojkZ0LjNGRmwgGSaiJkGmbcn2qLv0dblj9jFbO2gjgTlGuKEk1vFd
+                aMqGdc4pIokCRoMKq8BTXN5a25ZuMjpvNZnEVxbxnPXGdNZhVLe1O/CrgUl5DbwQZ6qyKmDVzG7K8aAr
+                Kp4Yppha26QSrpJCdoUBJZWwJXV9V3Vlbe2SQd6x0s8cENqzjc6p3V1pAyPlcFTvrVZ20MU+jOUTB0mn
+                2lvbTXDHrMUzn31s47S0Z+WipY7bZwwwnrqgwFpLieCB5pcMHZMk+3+gVVRso0OnV6TGraDRvbSJd/Ad
+                9ISM7GYCIZ9DOc1cHDmZgQTkYbJ++tSI/VnUjr+jjeaOzRoJNmwYl+2c1DG6yLAX1OCcY3ffVnJDHtkt
+                /wC6zTyzKYDdTIgiVu720IlieflhusORrz6rmKPCj1mqJW3JKubjfxOc4qG3eMJHFGe13tTsQ0brbrGB
+                kdfmKs22WiKKHHHgeVPFEupmwPGrd445THGh3wsAc++rp/J5PPIqK2odXdRsfJRD1CNrqGDVr/VNgLUZ
+                7Q6xxwFIh+rkTVPv4tv3eNWOm3ZJYwFaTUMFe8H+0GQDjeM/xx//xAApEAEAAgEDBAICAgIDAAAAAAAB
+                ABEhMUFRYXGBoZGxEMFw4SAw0fDx/9oACAEBAAE/If57Uu2OxGramhDNXFI+RajKM4rbLAc/U4OAMdch
+                6iD20l11lv1MidKrwQo4LzS61y0ZjRbmUqrm+JQzLoutK9EwlC75XiUT1DRqBa4il6e8LVgYv6htFA0N
+                NPIxAjjsa035fi/mZaDgHJKpXxHS1P2dGIR8dQWw2qWfVuUUYAm4nLTaCrCQ5kRWgtLW94Eg9S2+YOMe
+                hJ8kKP4nOSsOdKhY8r8FznC5rAwDFCPtUicat/uWs60YD/aHiY4slklueDQIt7FikrC9r9xiTrvH7MAN
+                QS0FA+4E8IyjEaN1Jlika6intl9GCXrZJ6dm3EZ8D3UYY3i8FTzRFAAWvbD90BS77jZ9p+Ar2T0Kc/Us
+                FAm8cDt7GGCKxkQ29qJnnHna/wBYVCqstdrXfMhR5u4NTPOpncB95gykfmfxZVpS9/7pXf6eEcx0DcXy
+                g1m1bXoXRN+kDtLCkUUTXrMsMMxlZfsf/JT33aq/JgW7MBlWPtDAn2Oprwu/CzOtSXhzfPPOWvvrq+DH
+                wIZW2EXoqw2uXZRO0a+2KAMAatk1Nh+YB9fiDq8IxO6/6xyk160i7Xf9O0riWj8te6mafhWK+1DzBniC
+                oa731KV1eY+XgzqwHSh/AfioGWkBsx3gXWHkdtPMFVdHYhrbPImsQBDb4nQocL8TO5N0zIXD4YKoDYi3
+                6KpX9y6u2FRVWjvmX53qUuNOYC1py0cJpfMKLgthDY+5hn8aImHnIfEraY6u7BAYWxk5NkOGNNqVa4Xo
+                doZ1YA05KrrCP/Bz4lqCmyIM3TpOL9g57YzCRRZAbzpcOdRo6f4D55o0lYzt1iZQ+Ox/0hXLERi9ex8T
+                KBGMCVngdCoYqELtcjdiPXx2TAC8Y3lgEQtZXFNyywzEVVSgHO5UL0EsHKmFlAUoRihquuYk15CWhlw1
+                eKhGzoWsEPYPEdVbSu6w0dhxNjgzZrSwZ+iG+j0lzh0CFFLgUWAnWPSaJXTd1c8u0vEBOcbVWcyj1yGx
+                PCjl5hck5cFR6PiJZTGruBf+zX2sC6ef5x//2gAMAwEAAgADAAAAEPPPPPPPPPPPPPPPPPPPPPPPPPPP
+                PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPKqKqozHtPHHijfuDMIHDi44ON/LPPLX7rPLLDHfPPP
+                PPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP/xAAjEQEAAgICAgID
+                AQEAAAAAAAABESEAMUFRYYFx8GCR0bEQ/9oACAEDAQE/EPwGKGVvisEhCgT2/X9Zb4kKRV/escCOFjtn
+                w+Md6SQxs+/7iS6E13GRp1EOr/mTDOHx9cfnKR8dZE7oHhf8xIZELrS/zDe4G/1jEmU57waEhVJVvj9Y
+                zviag5L/AM34xGmHot++8U1SfAUX+sJNWhQxdR8+O8SRBijbuCt+MZQVRlaUHpkMl6bbJ74xqEiiLfiu
+                Iv3ghTIypojms0JAUIbYN96O3CzSVUml7/5FcRqePpXvHYgVdO3fPVfFYoJAPQ+PPEV4U1k4gWeGf2s1
+                NdaKrDjB0m5jRuO0xPE4TSRUWVF3FwSUwX83i6UkyVpskvcPoEawaQEIRNWOeu5iXjAQIcp4A6Tgr3i4
+                GqnkIH04a8YHRHt5WbVpVOmOsHEROp5Z5X0aPwP/xAAlEQEAAgICAQMEAwAAAAAAAAABESEAMUFRYXGB
+                8GCRobEQ0eH/2gAIAQIBAT8Q+gZHUUbu8SnMlDo/Vx98o8GQldfO8NIiwnog7POHQCDKlP8Av4wDFKCe
+                pv8AWbApj3V/nCZCCfL8MJQAHk1fzv1ycDKnyo374AImhm0H3iTeJGZ68X/X5wDEC668YoWSzaACOfvh
+                iRYsXYsc+Yh7yFKuVonr4YDynAhZWSPXGvBCJJQuYmY8vBgpJSklDQr1onWNdS2EEIldckL7OR4zWqOp
+                vII5BQGHu+ZI9sCWlC2MzV28RvN3StqFEuuQt6MOMxuEbQjXez+FKIm45jj0mH26w2wA2NGuO/2dYNFZ
+                I2j3ets35B3gYmCKUhiOAC4jttu8WcjaKtt1PSJjmMQDIBEAhqalhslp8VgtBENlloa17hZbyGGZTKWw
+                OKvcRMHN4+YeGOaNjy37YEtmL2HByJeS4qcXCTzBwEQAQgqsnvHAoxuOCOAuC3bz9B//xAAnEAEBAAIC
+                AgEEAgIDAAAAAAABEQAhMUFRYYFxkaGxEPAgcDDR4f/aAAgBAQABPxD/AH2478/0Yo3Lo5wadQ3Lx5mz
+                pnJzkcAnr17NjbZo2TKTq0l5I+wwVrPn1ICewrx4y+VVHP2Ioo7M3YzyPCwFPEDxks+rBoNIGE0jyYiw
+                yyyiAWBWBj4qTi7liM2ZKfRZ8kiUoF0Zx8nVfJByhrZV3gYSqQCgFUCCrieGZm9cJdKyev4Zi5KGRQSd
+                GSu7fER8bROw7uGiqAAWUErWecbWs1S6keYusCuywsSqDETXY5LSBoRrNKAQpiP3QBZyEblNskemMSO8
+                BwXOJm6GU17xfKQeh1+s3HqlAVU7NnWU/wDOicOoIAd10xApHqqI6Zt+DhvEvkkDy2dADyqhH/EBguVI
+                vMJ0ZSSJLb9vkPtgw2ociVravQ84sPza4MAIBDaooDckO+Rw38Lm+jwQH+iw1d4HYp/O30d5LA/9n0vi
+                /wDXAy0a5Cv0/U4kRJHchv8AERCAlRMIOgv4zl5d0keZTacqWjjPG50vk52b4yU0kPCF+PxZZQkClQlK
+                plecCobbKDaFllhkq4we/P8ATnLBVnv+BSCon0D+ciFak8oHuI+cdppJGeAFPhx//wDvRBjhgdB25MCa
+                prnSEAAhbzDu5+6Uylj5ULADjFyCiREMOqs6s6wNFHV8GAj5FOHNVC6yfgf1JyZ2I3zKH2WV2ExHIH7P
+                NSDBycmeSac5HRaYvEEhGGuTNiqHeFyf1QwEcS26oYEWBoCVA9goCqx0YkqxvTQXMoxFtR69nA+1z8XG
+                WtZHspN50wgPgnNQB+OAUAYCUoGjhbyOadDrwM/fI2wG9Afr+KR4ARFFpgH6hhqIEEbKCqWPnHHM4iFu
+                NCiuKLoE9nPnGb1b08oAvvvCdgq/PKAr7d5XdBhRtBxfGBwaiWgBwBmrq0EQNyqB71kCnSaoKFIQardY
+                Lb4I2UhBqTi6wxV0twDgoB+ckqyUAOkRAJvswaSDi6CChVJz6YFnQRtYNSF7cWXjrE3kB6OnKaxrfQtA
+                3o+sLpmAADzBDdTeTKGQDDdiDDXOOAkBoi0FDy6y/ksVrzTHwXH+/wBfVUgbVHi1MOL8UJFNIEAs49f4
+                NKH2hWgaIgMArnSPzAi1u1QavOP11TiZ75YTmRMSn6YsUO+VDiJ3lHbEIced5A3c8GEJHJFwSJT03jqT
+                RDwITb3aLCmS/wAVLE3V2N73lqgbQKdkS+nfOb2cGHbEoBd3bhsBihVDoGKYbU844lCUTtHa0JrbfmfD
+                DXPDsoToXdw5IShyKFgzmm03Lg1LqYFe1UHPGuceojbAiqnAOKyGivoK4jeu8BFWCoOw2WYbGdZsBJxK
+                0Ni9K8C/TCatQiFQ0AKqb51tSRwR29OFBTUe8ry46qdqU6n/AFP+N5oGgRcC8Pv/AHj/AP/Z
+</property>
+        </structure>
+    </list-property>
 </report>
